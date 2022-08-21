@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: questrial, system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+
+  .home {
+    @apply relative text-white font-bold text-lg md:text-4xl xl:text-7xl hover:text-xl hover:md:text-5xl hover:xl:text-[85px] transition-all duration-300;
+  }
+
+  .home-title {
+    @apply absolute flex flex-col items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4 z-20;
+  }
+
+  .home-text {
+    @apply w-full text-center;
+  }
+
+  .home-bg {
+    @apply object-cover object-top brightness-50 blur-[2px] z-10 h-44 md:h-[600px] w-full;
+  }
+
+  .home-city {
+    @apply absolute text-xs w-full text-center md:text-base font-light top-1/2 left-1/2 -translate-x-1/2 translate-y-full xl:translate-y-14 z-20;
+  }
+
+  .home-line {
+    @apply absolute left-1/2 -translate-x-1/2 -translate-y-1/2 h-1 md:h-2 w-full bg-primary transition-all;
+  }
+
+  .home-carousel {
+    @apply overflow-clip flex flex-col lg:flex-row rounded-xl shadow mx-5 md:mx-20 my-10 md:my-20 transition-all;
+  }
+
+  .home-carousel-content {
+    @apply flex flex-col p-4 items-center justify-center font-bold text-2xl md:text-4xl xl:text-5xl w-full mx-auto transition-all;
+  }
+
+  .style-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-red-800 via-primary to-orange-500 py-1;
+  }
+
+  .list-services {
+    @apply flex flex-wrap justify-center gap-2 sm:gap-8 mx-5 md:mx-20 transition-all;
+  }
+
+  .option {
+    @apply block font-normal text-center my-6 mx-5 md:mx-20;
+  }
+
+  .option-link {
+    @apply block md:inline underline text-primary;
+  }
+
+  .location {
+    @apply relative flex flex-col lg:flex-row text-center mt-10;
+  }
+
+  .location-container {
+    @apply absolute w-full text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20;
+  }
+
+  .location-title {
+    @apply font-bold text-xl;
+  }
+
+  .location-img {
+    @apply object-cover brightness-50 z-10 w-full h-[450px];
+  }
+
+  .footer {
+    @apply bg-secondary py-5;
+  }
+
+  .footer-text {
+    @apply text-white text-center mx-5 md:mx-20;
+  }
+
+  .navbar {
+    @apply sticky top-0 z-50 bg-white shadow-md w-full;
+  }
+
+  .navbar-container {
+    @apply md:flex md:justify-between mx-5 md:mx-20 py-3 transition-all;
+  }
+
+  .navbar-logo-container {
+    @apply flex justify-between items-center;
+  }
+
+  .navbar-logo {
+    @apply w-20 md:w-28;
+  }
+
+  .navbar-menu {
+    @apply cursor-pointer md:hidden block;
+  }
+
+  .navbar-menu-icon {
+    @apply w-8 h-8 md:hidden transition-all;
+  }
+
+  .navbar-item-list {
+    @apply md:z-auto md:static md:flex-row md:items-center md:gap-4 md:w-auto md:p-0 absolute flex flex-col gap-6 bg-white left-0 -z-40 w-full px-5 py-6 shadow-md md:shadow-none transition-all duration-500;
+  }
+
+  .navbar-item-close {
+    @apply opacity-0 top-[-500px] md:opacity-100;
+  }
+
+  .navbar-item-open {
+    @apply opacity-100 top-[40px] md:opacity-100;
+  }
+
+  .navbar-item {
+    @apply hover:font-bold transition-all;
+  }
+
+  .item-hover-r {
+    @apply absolute -bottom-0 left-1/2 w-0 h-1 bg-primary group-hover:w-1/2 group-hover:transition-all;
+  }
+
+  .item-hover-l {
+    @apply absolute -bottom-0 right-1/2 w-0 h-1 bg-primary group-hover:w-1/2 group-hover:transition-all;
+  }
+
+  .active {
+    @apply font-bold text-primary;
+  }
+
+  .section {
+    @apply my-10 md:my-20;
+  }
+
+  .section-container {
+    @apply overflow-clip relative mb-10 md:mb-20;
+  }
+
+  .section-title {
+    @apply text-center font-bold text-2xl md:text-4xl xl:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-red-800 via-primary to-orange-500 py-1 transition-all;
+  }
+
+  .section-line-l {
+    @apply absolute bottom-1/2 -left-1/4 w-1/2 h-1 bg-gradient-to-r from-red-800 via-primary to-orange-500 transition-all;
+  }
+
+  .section-line-r {
+    @apply absolute bottom-1/2 -right-1/4 w-1/2 h-1 bg-gradient-to-l from-red-800 via-primary to-orange-500 transition-all;
+  }
+
+  .card-container {
+    @apply overflow-clip rounded-xl shadow h-min w-full sm:w-[45%] lg:w-[30%] transition-all;
+  }
+
+  .card-img {
+    @apply object-center object-cover h-[200px] sm:h-[300px] xl:h-[500px] w-full;
+  }
+
+  .card-txt {
+    @apply text-center text-white px-2 font-medium text-lg md:text-xl xl:text-2xl bg-primary py-1;
+  }
+
+  .carousel-img {
+    @apply block w-full h-full object-cover;
+  }
+
+  .social-networks {
+    @apply flex gap-4 justify-center mx-5 md:mx-20;
+  }
+
+  .social-networks-item {
+    @apply flex items-center gap-2;
+  }
+
+  .social-networks-icon {
+    @apply w-10 h-10 fill-primary;
+  }
+
+  .error {
+    @apply w-full flex flex-col justify-center items-center text-center h-screen bg-white md:text-xl;
+  }
+
+  .error-logo {
+    @apply w-1/2 md:w-1/4 mb-10;
+  }
+
+  .error-text {
+    @apply text-primary font-bold;
+  }
+}

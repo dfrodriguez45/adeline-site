@@ -1,0 +1,12 @@
+---
+export interface Props {
+	title: string;
+	src: string;
+}
+const { src, title } = Astro.props;
+---
+
+<li class="card-container">
+    <img class="card-img" src={src} alt={title}>
+    <p class="card-txt">{title}</p>
+</li>

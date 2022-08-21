@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from "../components/navbar/Navbar.jsx";
+import Section from '../components/section/Section.astro';
+import Carousel from '../components/carousel/Carousel.jsx';
+import Card from '../components/card/Card.astro';
+import SocialNetworks from '../components/socialNetworks/SocialNetworks.jsx';
+import { services } from '../js/services';
+---
+
+<Layout title="Adeline - Salón de belleza">
+	<Navbar client:visible />
+	<main>
+		<section id="inicio">
+			<div class="home group">
+				<h1 class="home-title">
+					<span class="home-text">Adeline</span>
+					<span class="home-text">Salón de Belleza</span>
+					<span class="item-hover-r"></span>
+					<span class="item-hover-l"></span>
+				</h1>
+				<p class="home-city">
+					Heroica Puebla de Zaragoza, PUE.
+				</p>
+				<img class="home-bg" src="bg-home.jpg" alt="Salón de belleza">
+			</div>
+			<span class="home-line"></span>
+
+			<div class="home-carousel">
+				<Carousel client:visible />
+				<div class="home-carousel-content">
+					<span>Luce <span class="style-text">distinto</span></span>
+					<span>Luce <span class="style-text">espectacular</span></span>
+				</div>
+			</div>
+			
+		</section>
+
+		<Section title='Servicios' attr='servicios'>
+			<ul class="list-services">
+
+				{services.map((service) =>
+				<Card title={service.title} src={service.src} />)}
+
+			</ul>
+			<p class="option">¿Buscas algo en especial? 
+				<a class="option-link" href="#contacto">Pregunta y agenda tu cita!</a>
+			</p>
+		</Section>
+
+		<Section title='Contacto' attr='contacto'>
+			<SocialNetworks />
+			<div class="location">
+				<div class="location-container">
+					<h3 class="location-title">¡Visitanos!</h3>
+					<address>
+						Antiguo Camino Real a Castillotla 13925, <br>
+						San Isidro Castillotla, <br>
+						Heroica Puebla de Zaragoza, PUE.
+					</address>
+				</div>
+				
+				<img class="location-img" src="location.jpg" alt="Ubicación">
+			</div>
+		</Section>
+	</main>
+	<footer class="footer">
+		<p class="footer-text">© 2022 Sitio web diseñado y desarrollado por 
+			<a class="underline" target="_blank" href="https://www.linkedin.com/in/dfrodriguez45">Daniel Rodriguez</a>.
+		</p>
+	</footer>
+</Layout>
+<script>
+	import '../js/index.js';
+</script>
