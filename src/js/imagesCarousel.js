@@ -8,5 +8,8 @@ export const images = [
     },
     {
         src: 'carousel-2.jpeg'
+    },
+    {
+        src: 'carousel-3.jpeg'
     }
 ]
